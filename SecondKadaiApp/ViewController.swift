@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var InputName: UITextField!
     var textname = ""
@@ -16,6 +16,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        InputName.delegate = self
 
         
     }
@@ -28,12 +30,17 @@ class ViewController: UIViewController {
 
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        return true
+    }
+    
     @IBAction func unwind(segue: UIStoryboardSegue) {
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
     }
 
 
